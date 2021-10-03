@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("Index", "Account"))
+        {
+            <label> email </label> @Html.TextBox("email") <br />
+            
+            if (ViewBag.Result != null)
+            {
+                <p>@ViewBag.Result</p>
+            }
+            <input type="submit" name="operation" value="Get Result">
+        }
+    </div>
+</body>
+</html>

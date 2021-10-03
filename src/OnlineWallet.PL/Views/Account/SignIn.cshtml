@@ -1,0 +1,39 @@
+﻿@model SignInViewModels
+
+@{ ViewData["Title"] = "SignIn page"; }
+
+
+<div class="square-center">
+    <div class="about">
+        <h1>Sign in page</h1>
+
+        <form method="post" asp-controller="Account" asp-action="SignIn" asp-route-returnUrl="@Model.ReturnUrl">
+
+            <div asp-validation-summary="ModelOnly"></div>
+
+            <div>
+                <input class="input" asp-for="UserName" placeholder="Name" type="text" />
+                <span asp-validation-for="UserName"></span>
+            </div>
+
+            <div>
+                <input class="input" asp-for="Password" placeholder="******" type="password" />
+                <span asp-validation-for="Password"></span>
+            </div>
+
+            <div>
+                <label asp-for="RememberMe"></label>
+                <input asp-for="RememberMe" />
+            </div>
+
+            <div>
+                <input class="button" type="submit" value="Enter" />
+            </div>
+
+        </form>
+    </div>
+</div>
+
+@section css {
+    <link href="~/css/home.css" rel="stylesheet" asp-append-version="true" />
+}

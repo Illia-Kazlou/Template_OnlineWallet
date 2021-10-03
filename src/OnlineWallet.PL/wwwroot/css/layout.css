@@ -1,0 +1,152 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    color:  cornflowerblue;
+}
+
+.auth__name{
+    text-align:center;
+    
+}
+
+body {
+    background-image: url(/images/fone.jpg);
+    background-position: top, center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.button {
+    cursor: pointer;
+    padding: 4px 12px;
+    background: rgba(148, 198, 195, 0.4);
+    border-radius: 3px;
+    border: 1px solid #b8e0e8;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    text-transform: uppercase;
+    color: #6495ed;
+    text-decoration: none;
+    border-bottom-color: #6495ed;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.main-header {
+    width: 800px;
+    display: flex;
+    align-items: center;
+    margin: auto; 
+    margin-bottom: 20px;
+}
+
+.mh-logo {
+}
+
+.container {
+    display: flex;
+    font-size: 20px;
+    align-items: center;
+    border: outset;
+}
+
+.header__datetime {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.header__navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    width: 400px;
+}
+
+.date {
+    width: 100px;
+    height: 60px;
+    display: table-cell;
+    text-align: center;
+    font-size: 18px;
+    border: outset;
+}
+
+.time {
+    width: 100px;
+    height: 60px;
+    display: table-cell;
+    text-align: center;
+    border: outset;
+    line-height: 60px;
+}
+
+.signUp {
+    width: 300px;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.signUp__text {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.signIn {
+    width: 100px;
+    height: 60px;
+    border: outset;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.signIn__text {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.logOut {
+    width: 100px;
+    height: 60px;
+    border: outset;
+}
+
+.cont {
+    width: 700px;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    font-size: 20px;
+}
+
+footer {
+    width: 700px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    margin-right: -50%;
+    display: flex;
+    transform: translate(-50%, -50%)
+}
+
+footer div {
+    color: #fff;
+    display: flex;
+    margin: auto;
+    align-items: center;
+}

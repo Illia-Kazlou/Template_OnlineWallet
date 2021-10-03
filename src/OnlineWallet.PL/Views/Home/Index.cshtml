@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@if (User.Identity.IsAuthenticated)
+{
+    <div> Welcome!</div>
+    <div> @User.Identity.Name</div>
+
+    <a class="button" asp-controller="Operation" asp-action="Index">Operations</a>
+    
+}
+else
+{
+    <div class="square-center">
+        <div class="about">
+            <h1>Welcome !</h1>
+            <p>
+                This application is for planning your finances.
+                It shows your balance, which can be managed by adding the operations you have made.
+                It also stores the entire history of your operations.
+            </p>
+        </div>
+    </div>
+
+}
+
+@section css {
+    <link href="~/css/home.css" rel="stylesheet" asp-append-version="true" />
+}

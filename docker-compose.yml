@@ -1,0 +1,36 @@
+version: '3.7'
+
+volumes:
+  datafiles:
+
+services:
+  localdb:
+    container_name: SQL_server_db
+    image: "mcr.microsoft.com/mssql/server:2019-latest"
+    volumes: 
+      - datafiles:/var/lib/mysql
+    restart: always
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=Qwerty123
+    ports:
+      - "1450:1433"
+    networks:
+      - wallet-network
+  
+  wallet-app:
+    container_name: MVC_application
+    build: .
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    depends_on:
+      - localdb
+    ports:
+      - "5000:80"
+    networks:
+      - wallet-network
+      
+networks:
+  wallet-network:
+    driver: bridge
+  

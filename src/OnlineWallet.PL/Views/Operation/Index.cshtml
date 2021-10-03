@@ -1,0 +1,36 @@
+﻿@model IEnumerable<OperationViewModel>
+
+@{ 
+    ViewData["Title"] = "Index page"; 
+}
+
+
+<div class="square-center">
+    <div class ="about">  
+        <h1>Your operation</h1>
+         @if (Model != null)
+         {
+               @foreach (var operation in Model)
+               {
+                     <span>@operation.Name</span>
+                     <span>@operation.OperationCategory</span>
+                     <span>@operation.OperationType</span>
+                     <span>@operation.Percent</span>
+                     <span>@operation.StartDate</span>
+                     <span>@operation.Amount</span>
+                     <span>@operation.Description</span>
+               }
+         }
+         else
+         {
+             <div class="text">Operations is empty. </div>
+         }
+        <a class="button" asp-controller="Operation" asp-action="Create">Add operation</a>
+        <a class="button" asp-controller="Home" asp-action="Index">Back</a>
+    </div>
+</div>
+
+@section css {
+    <link href="~/css/home.css" rel="stylesheet" asp-append-version="true" />
+    <link href="~/css/profile.css" rel="stylesheet" asp-append-version="true" />
+}

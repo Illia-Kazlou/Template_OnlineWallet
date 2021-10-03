@@ -1,0 +1,81 @@
+﻿@model OperationActionViewModel
+
+@{
+    ViewData["Title"] = "Add operation";
+}
+
+<div class="square-center">
+    <div class="about">
+        <h1>Create new operation</h1>
+        <div class="form">
+            <form method="post" asp-controller="Operation" asp-action="Create">
+                <div asp-validation-summary="ModelOnly"></div>
+
+                <div>
+                    <input class="input__data" asp-for="Name"
+                           placeholder="Operation title" type="text" />
+                    <span asp-validation-for="Name"></span>
+                </div>
+
+                <div>
+                    <input class="input__data" asp-for="Amount"
+                           placeholder="Amount" type="text" />
+                    <span asp-validation-for="Amount"></span>
+                </div>
+
+                <div class="day">
+                    <input class="input__data" asp-for="Description"
+                           placeholder="Description" type="text" />
+                    <span asp-validation-for="Description"></span>
+                </div>
+
+                <div>
+                    <input class="input__data" asp-for="StartDate"
+                           placeholder="Start time" type="date" />
+                    <span asp-validation-for="StartDate"></span>
+                </div>
+
+                <div>
+                    <input class="input__data" asp-for="FinishDate"
+                           placeholder="Finish time" type="date" />
+                    <span asp-validation-for="FinishDate"></span>
+                </div>
+
+                <div>
+                    <select id="types" class="input" asp-for="Type" asp-items="ViewBag.OperationTypes"></select>
+                    <span asp-validation-for="Type"></span>
+                </div>
+
+                <div>
+                    <select id="types" class="input" asp-for="Category" asp-items="ViewBag.OperationCategories"></select>
+                    <span asp-validation-for="Category"></span>
+                </div>
+
+                <div>
+                    <input class="input__data" asp-for="Percent" placeholder="Percent" type="text" />
+                    <span asp-validation-for="Percent"></span>
+                </div>
+
+                <div>
+                    <input class="input__data" asp-for="Planned" placeholder="Planned" type="checkbox" value="true" />
+                    <span asp-validation-for="Planned">Planned</span>
+                </div>
+
+                <div>
+                    <input class="button" type="submit" value="Confirm" />
+                </div>
+
+                <div>
+                    <a class="button" asp-controller="Operation" asp-action="Index">Back</a>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+
+@section css {
+    <link href="~/css/home.css" rel="stylesheet" asp-append-version="true" />
+}
+

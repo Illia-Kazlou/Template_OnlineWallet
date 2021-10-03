@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - OnlineWallet.PL</title>
+
+    <link href="~/css/layout.css" rel="stylesheet" asp-append-version="true" />
+    @RenderSection("css", false)
+
+    <script>
+        var months = new Array(13);
+        months[1] = "January"; months[2] = "February"; months[3] = "March"; months[4] = "April"; months[5] = "May"; months[6] = "June"; months[7] = "July"; months[8] = "August"; months[9] = "September"; months[10] = "October"; months[11] = "November"; months[12] = "December";
+
+        var time = new Date();
+        var thismonth = months[time.getMonth() + 1];
+        var date = time.getDate();
+        var thisyear = time.getYear();
+        var day = time.getDay() + 1;
+
+        if (thisyear < 2000)
+            thisyear = thisyear + 1900;
+        if (day == 1) DayofWeek = "sunday";
+        if (day == 2) DayofWeek = "monday";
+        if (day == 3) DayofWeek = "tuesday";
+        if (day == 4) DayofWeek = "wednesday";
+        if (day == 5) DayofWeek = "thursday";
+        if (day == 6) DayofWeek = "friday";
+        if (day == 7) DayofWeek = "saturday";
+    </script>
+
+    <script>
+        setInterval(function () {
+            var cd = new Date();
+            var clockdat = document.getElementById("clockdat");
+            clockdat.innerHTML = cd.toLocaleTimeString();
+        }, 1000);
+    </script>
+
+    <script>
+        function digitalClock() {
+            var date = new Date();
+            var hours = date.getHours();
+            var minutes = date.getMinutes();
+            var seconds = date.getSeconds();
+
+            if (hours < 10) hours = "0" + hours;
+            if (minutes < 10) minutes = "0" + minutes;
+            if (seconds < 10) seconds = "0" + seconds;
+            document.getElementById("id_clock").innerHTML = hours + ":" + minutes + ":" + seconds;
+            setTimeout("digitalClock()", 1000);
+        }
+    </script>
+
+</head>
+<body>
+    <header class="main-header">
+        <div>
+            <a href="#" class="mh-logo"><img src="~/images/logo.png" height="80" alt="brand" /></a>
+        </div>
+        <div class="container">
+
+            <div class="header header__datetime ">
+                <div class="date">
+                    <script>
+                        document.write(date + " ");
+                        document.write(thismonth + " " + thisyear + " " + " " + DayofWeek);
+                    </script>
+                </div>
+                <div class="time" id="id_clock">
+                    <script>digitalClock();</script>
+                </div>
+            </div>
+            @if (!User.Identity.IsAuthenticated)
+            {
+                 <div class="header header__navigation">
+                     <div class="signUp">
+                         <a class="signUp signUp__text" asp-controller="Account" asp-action="Register">SignUp</a>
+                     </div>
+                     <div class="signIn">
+                         <a class="signUp signUp__text" asp-controller="Account" asp-action="SignIn">SignIn</a>
+                     </div>
+                 </div>
+            }
+            else
+            {
+                 <div class="header header__navigation">
+
+                     <div>
+                         @{await Html.RenderPartialAsync("_GetBalance");}
+                     </div>
+
+
+                     <div class="signUp">
+                         <div class="signIn">
+                             <span class="auth__name">
+                                 <a asp-controller="Profile" asp-action="Index">@User.Identity.Name</a>
+                             </span>
+                         </div>
+                         <div class="signIn">
+                             <form method="post" asp-controller="Account" asp-action="Logout">
+                                 <button class="button" type="submit">LogOut </button>
+                             </form>
+                         </div>
+                     </div>
+                 </div>
+            }
+
+        </div>
+
+</header>
+
+    <div class="cont">
+
+            @RenderBody()
+
+    </div>
+
+    <footer>
+        <div class="footer">
+            &copy; 2021 - OnlineWallet by I.Kozlov from Goodel tech. - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+</body>
+</html>

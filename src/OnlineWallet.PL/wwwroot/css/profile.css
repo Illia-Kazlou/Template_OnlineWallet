@@ -1,0 +1,23 @@
+﻿.input__data {
+    width: 300px;
+    padding: 8px 16px;
+    border: 1px solid #eaf5f9;
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 16px;
+    border-color: #b8e0e8;
+    border-bottom-color: #9f56e5;
+    margin-bottom: 5px;
+    border-color: #b8e0e8;
+    border-bottom-color: #6495ed;
+    background: rgba(228, 232, 235, 0.4);
+    text-align: center;
+    color: #bbe3ea;
+}
+
+.day {
+    color: #bbe3ea;
+}

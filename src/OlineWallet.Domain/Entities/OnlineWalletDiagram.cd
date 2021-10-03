@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="OnlineWallet.DAL.User">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <AssociationLine Name="Balances" Type="OnlineWallet.DAL.Balance" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6" Y="0.688" />
+        <Point X="3.75" Y="0.688" />
+        <Point X="3.75" Y="1.5" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="-2.14" Y="0.905" Height="0.182" Width="1.139" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Profile" Type="OnlineWallet.DAL.Profile" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="7.5" Y="0.66" />
+        <Point X="10.438" Y="0.66" />
+        <Point X="10.438" Y="1.5" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="1.979" Y="0.905" Height="0.182" Width="0.795" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAACAAEAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>Entities\User.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Balances" />
+      <Property Name="Profile" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="OnlineWallet.DAL.Operation">
+    <Position X="3" Y="3.75" Width="1.75" />
+    <AssociationLine Name="OperationTypes" Type="OnlineWallet.DAL.Enums.OperationType">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.62" Y="0.081" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="OperationCategories" Type="OnlineWallet.DAL.Enums.OperationCategory">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.287" Y="0.06" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Balance" Type="OnlineWallet.DAL.Balance">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.543" Y="0.061" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAACAAACAAAgAAAAAAggAASAIAAAAAAAAAAECEAAAAA=</HashCode>
+      <FileName>Entities\Operation.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="OperationTypes" />
+      <Property Name="OperationCategories" />
+      <Property Name="Balance" />
+    </ShowAsAssociation>
+    <Lollipop Orientation="Left" Position="0.1" />
+  </Class>
+  <Class Name="OnlineWallet.DAL.Profile">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <AssociationLine Name="User" Type="OnlineWallet.DAL.User" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.25" Y="1.5" />
+        <Point X="10.25" Y="0.979" />
+        <Point X="7.5" Y="0.979" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.168" Y="-0.297" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>QAADAEAAACAAAAAAAAQAQAwAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Entities\Profile.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="User" />
+    </ShowAsAssociation>
+    <Lollipop Orientation="Left" Position="0.1" />
+  </Class>
+  <Class Name="OnlineWallet.DAL.Balance">
+    <Position X="3" Y="1.5" Width="1.5" />
+    <AssociationLine Name="User" Type="OnlineWallet.DAL.User" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.25" Y="1.5" />
+        <Point X="4.25" Y="0.926" />
+        <Point X="6" Y="0.926" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.084" Y="-0.357" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Operations" Type="OnlineWallet.DAL.Operation">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.444" Y="0.06" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAADAAACAAAgAAAAAAAAAAiAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Balance.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="User" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Operations" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Orientation="Left" Position="0.1" />
+  </Class>
+  <Enum Name="OnlineWallet.DAL.Enums.OperationCategory">
+    <Position X="6.75" Y="3" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>BAAAAgAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Enums\OperationCategory.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="OnlineWallet.DAL.Enums.OperationType">
+    <Position X="6.75" Y="5.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAICAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enums\OperationType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
